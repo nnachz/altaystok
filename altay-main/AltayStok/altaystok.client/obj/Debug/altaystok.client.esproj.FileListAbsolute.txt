@@ -1,0 +1,5 @@
+C:\Users\kerem.turkozu\Projects\Angular-Dotnet\new\AltayStok\altaystok.client\obj\Debug\altaystok.client.esproj.CoreCompileInputs.cache
+C:\Users\kerem.turkozu\Desktop\AltayStok\altaystok.client\obj\Debug\altaystok.client.esproj.CoreCompileInputs.cache
+C:\Users\kerem.turkozu\Desktop\asdsad\AltayStok\altaystok.client\obj\Debug\altaystok.client.esproj.CoreCompileInputs.cache
+C:\Users\kerem.turkozu\Desktop\asdsad\asdadadada\AltayStok\altaystok.client\obj\Debug\altaystok.client.esproj.CoreCompileInputs.cache
+C:\Users\kerem.turkozu\Desktop\33\AltayStok\altaystok.client\obj\Debug\altaystok.client.esproj.CoreCompileInputs.cache

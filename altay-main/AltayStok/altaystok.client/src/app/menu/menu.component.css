@@ -1,0 +1,23 @@
+/* Dropdown Menu */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* Remove the default display:none */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  will-change: transform;
+  top: 100%;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  margin-top: 0.125rem;
+  background-color: rgb(51, 45, 45);
+  
+}
+
+
+a {
+  color: #ffff;
+}

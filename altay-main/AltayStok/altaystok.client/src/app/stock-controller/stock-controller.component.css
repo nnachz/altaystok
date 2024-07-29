@@ -1,0 +1,54 @@
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  padding: 0;
+  margin: 0;
+}
+
+.form-control-custom {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.btn-custom {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.form-label-custom {
+  font-size: 14px;
+  font-weight: bold;
+  color: #6c757d;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 12rem;
+}
+
+.mt-n1 {
+  margin-top: -0.25rem !important;
+}
+
+.ps-n1 {
+    padding-left: -0.25rem !important;
+}

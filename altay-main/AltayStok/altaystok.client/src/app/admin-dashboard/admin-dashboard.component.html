@@ -1,0 +1,87 @@
+<app-menu></app-menu>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 position-relative">
+      <h2 class="text-center mt-5">Yeni Kullanıcı Yarat</h2>
+      <form (ngSubmit)="createUser()">
+        <div class="form-outline mb-4">
+          <mdb-form-control>
+            <input mdbInput [(ngModel)]="newUsername" type="text" id="newUsername" class="form-control form-control-lg" name="username" required />
+            <label mdbLabel class="form-label" for="newUsername">Kullanıcı Adı</label>
+          </mdb-form-control>
+        </div>
+        <div class="form-outline mb-4">
+          <mdb-form-control>
+            <input mdbInput [(ngModel)]="newPassword" type="password" id="newPassword" class="form-control form-control-lg" name="password" required />
+            <label mdbLabel class="form-label" for="newPassword">Şifre</label>
+          </mdb-form-control>
+        </div>
+        <div class="form-outline mb-4">
+          <mdb-form-control>
+            <select mdbInput [(ngModel)]="newRole" id="newRole" class="form-control form-control-lg" name="role" required>
+              <option value="" disabled selected>Rol Seçin</option>
+              <option value="Admin">Admin</option>
+              <option value="User">User</option>
+            </select>
+            <label mdbLabel class="form-label" for="newRole">Rol</label>
+          </mdb-form-control>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg">Yeni Kullanıcı Yarat</button>
+        </div>
+      </form>
+      <div class="container mt-5" *ngIf="updatingUser">
+        <div class="row justify-content-center">
+          <div class="col-md-6 position-relative">
+            <h2 class="text-center mt-5">Şifre Güncelle</h2>
+            <form (ngSubmit)="updatePassword()">
+              <div class="form-outline mb-4">
+                <mdb-form-control>
+                  <input mdbInput [(ngModel)]="newPasswordForUpdate" type="password" id="newPasswordForUpdate" class="form-control form-control-lg" name="newPasswordForUpdate" required />
+                  <label mdbLabel class="form-label" for="newPasswordForUpdate">Yeni Şifre</label>
+                </mdb-form-control>
+              </div>
+              <div class="form-outline mb-4">
+                <mdb-form-control>
+                  <input mdbInput [(ngModel)]="confirmPasswordForUpdate" type="password" id="confirmPasswordForUpdate" class="form-control form-control-lg" name="confirmPasswordForUpdate" required />
+                  <label mdbLabel class="form-label" for="confirmPasswordForUpdate">Yeni Şifre Tekrar</label>
+                </mdb-form-control>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Şifre Güncelle</button>
+                <button type="button" class="btn btn-secondary btn-lg" (click)="updatingUser = null">İptal</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Kullanıcılar</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Rol</th>
+            <th>İşlemler</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" (click)="startUpdatePassword(user)">Güncelle</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

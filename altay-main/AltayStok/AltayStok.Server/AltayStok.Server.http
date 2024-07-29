@@ -1,0 +1,6 @@
+@AltayStok.Server_HostAddress = http://localhost:7110;
+
+GET {{AltayStok.Server_HostAddress}}/AltayStok/
+Accept: application/json
+
+###

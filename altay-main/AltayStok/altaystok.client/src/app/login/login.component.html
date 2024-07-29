@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Login</title>
+  <!-- MDB CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('../../assets/altay.jfif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .login-container {
+      margin-top: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      width: 350px;
+      text-align: center;
+      z-index: 1;
+    }
+
+      .login-container svg {
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <svg width="61" height="50" viewBox="0 0 61 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0)">
+        <path d="M0 25L29.4604 0L60.1852 25L31.6099 5.80808L54.9379 25L31.2305 9.59596L49.6907 25L31.0409 13.5101L44.8228 25L30.5351 17.298L39.5123 25L30.1558 21.149L34.4548 25H0Z" fill="white"></path>
+        <path d="M5.37369 28.1565H3.35066L0.0632324 49.9999H1.07475L2.33914 40.9722H4.93115L6.19555 49.9999H8.34502L5.37369 28.1565ZM2.40236 40.1514L3.54032 32.1969H3.7932L4.86793 40.1514H2.40236Z" fill="white"></path>
+        <path d="M44.8228 28.1565H42.863L39.5756 49.9999H40.5871L41.8515 40.9722H44.4435L45.7079 49.9999H47.8573L44.8228 28.1565ZM41.8515 40.1514L42.9894 32.1338H43.2423L44.317 40.0883H41.8515V40.1514Z" fill="white"></path>
+        <path d="M16.5636 28.1565H13.9716V49.9999H19.9774V49.1792H16.5003L16.5636 28.1565Z" fill="white"></path>
+        <path d="M32.8111 28.1565H25.6672V28.9772H28.0064V49.9999H30.5352V28.9141H32.8111V28.1565Z" fill="white"></path>
+        <path d="M52.4724 28.1565H54.938L56.8978 37.8787L59.0473 28.1565H59.9956L57.3403 39.9621L57.2771 49.9999H54.8115V39.9621L52.4724 28.1565Z" fill="white"></path>
+        <path d="M54.6851 2.77776C54.6851 1.26261 55.8862 0.0631104 57.4035 0.0631104C58.9208 0.0631104 60.122 1.26261 60.122 2.77776C60.122 4.22978 58.9208 5.4924 57.4035 5.4924C55.8862 5.4924 54.6851 4.29291 54.6851 2.77776ZM59.6794 2.77776C59.6794 1.51513 58.6679 0.441898 57.4035 0.441898C56.0759 0.441898 55.1276 1.452 55.1276 2.77776C55.1276 4.04038 56.1391 5.05048 57.4035 5.05048C58.7311 5.11362 59.6794 4.04038 59.6794 2.77776ZM56.3288 1.26261H57.5932C57.9725 1.26261 58.2886 1.38887 58.4782 1.57826C58.6047 1.70452 58.7311 1.95705 58.7311 2.20958C58.7311 2.65149 58.4782 2.96715 58.0989 3.09341L58.7943 4.10351H58.1621L57.4667 3.15654H56.8978V4.16665H56.3288V1.26261ZM57.5299 2.65149C57.9093 2.65149 58.0989 2.4621 58.0989 2.20958C58.0989 1.89392 57.9093 1.76766 57.5299 1.76766H56.8345V2.65149H57.5299Z" fill="white"></path>
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect width="60.1852" height="50" fill="white"></rect>
+        </clipPath>
+      </defs>
+    </svg>
+    <h2 class="text-white fs-3">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Username input -->
+      <div class="form-outline mb-4 mt-4 col-auto align-items-center">
+        <mdb-form-control class="col-auto mb-4">
+          <input mdbInput
+                 type="text"
+                 id="formTextExample1"
+                 class="form-control text-white"
+                 name="username"
+                 [(ngModel)]="username"
+                 required
+                 autocomplete="off"
+                 aria-describedby="textExample1" />
+          <label mdbLabel class="form-label text-white" for="formTextExample1">Username</label>
+        </mdb-form-control>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4 col-auto align-items-center">
+        <mdb-form-control class="col-auto mb-4">
+          <input mdbInput
+                 type="password"
+                 id="formTextExample2"
+                 class="form-control text-white"
+                 name="password"
+                 [(ngModel)]="password"
+                 required
+                 autocomplete="off"
+                 aria-describedby="textExample2" />
+          <label mdbLabel class="form-label text-white" for="formTextExample2">Password</label>
+        </mdb-form-control>
+      </div>
+
+      <!-- Error message -->
+      <div *ngIf="message" class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input mdbCheckbox class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+            <label class="form-check-label text-white" for="form1Example3"> Remember me </label>
+          </div>
+        </div>
+
+        <div class="col">
+          <!-- Simple link -->
+          <a class="text-white" href="#!">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-dark btn-rounded" mdbRipple>Sign in</button>
+    </form>
+  </div>
+
+  <img src="../../assets/altay.jfif" alt="Background" class="background-image">
+
+  <!-- MDB JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+</body>
+</html>
